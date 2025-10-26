@@ -18,12 +18,16 @@ eureka:
   server:
     enable-self-preservation: false
     eviction-interval-timer-in-ms: 15000
+    response-cache-update-interval-ms: 5000
+    # THIS IS THE KEY FIX - Allow REST endpoints
+    rest-api-port-enabled: true
 
 management:
   endpoints:
     web:
       exposure:
-        include: health,info
+        include: "*"
+      base-path: /actuator
   endpoint:
     health:
       show-details: always
