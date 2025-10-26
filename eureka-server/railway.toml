@@ -1,0 +1,8 @@
+[build]
+builder = "NIXPACKS"
+
+[build.nixpacks]
+cmds = ["mvn clean package -Dmaven.test.skip=true"]
+
+[deploy]
+startCommand = "java -Dserver.port=$PORT -jar target/eureka-service-1.0.0.jar"

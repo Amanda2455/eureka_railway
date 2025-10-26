@@ -1,5 +1,0 @@
-[phases.build]
-cmds = ["mvn clean package -DskipTests"]
-
-[phases.start]
-cmd = "java -Dserver.port=$PORT -jar target/eureka-service-1.0.0.jar"
